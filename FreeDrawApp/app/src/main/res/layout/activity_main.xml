@@ -17,6 +17,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@drawable/button_bg"
+            android:drawableLeft="@drawable/penpalette"
             android:text="Button1"
             android:textColor="@android:color/white" />
 
@@ -26,6 +27,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@drawable/button_bg"
+            android:drawableLeft="@drawable/colorpalette"
             android:text="Button2"
             android:textColor="@android:color/white" />
     </LinearLayout>
