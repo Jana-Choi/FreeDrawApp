@@ -62,8 +62,14 @@ public class PaintBoard extends View {
         switch(action) {
             case MotionEvent.ACTION_DOWN: {
                 m_Brush = new PaintBrush(m_Bitmap);
-                //PaintBrushSetter.LeavesPaintBrushSetting(m_Brush);
                 PaintBrushSetter.DefaultPaintBrushSetting(m_Brush);
+                //PaintBrushSetter.CharcoalPaintBrushSetting(m_Brush);
+                //PaintBrushSetter.ShortGrassPaintBrushSetting(m_Brush);
+                //PaintBrushSetter.WatercolorExpressivePaintBrushSetting(m_Brush);
+                //PaintBrushSetter.LeavesPaintBrushSetting(m_Brush);
+                //PaintBrushSetter.CalligraphyPaintBrushSetting(m_Brush);
+                //PaintBrushSetter.GlowPaintBrushSetting(m_Brush);
+
                 m_Brush.strokeTo(event.getX(), event.getY(), PaintBrushDefine.PAINT_BRUSH_PRESSURE, PaintBrushDefine.PAINT_BRUSH_XTILT, PaintBrushDefine.PAINT_BRUSH_YTILT, PaintBrushDefine.PAINT_BRUSH_DTIME);
             }
             break;
