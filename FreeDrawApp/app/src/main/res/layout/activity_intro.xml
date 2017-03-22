@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorIntroBackground"
+    android:background="@android:color/background_dark"
     tools:context="org.graphics.jana.freedrawapp.IntroActivity">
 
     <ImageView
@@ -19,5 +19,5 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/intro_palette_64_2" />
+        app:srcCompat="@drawable/intro_palette_64_1" />
 </android.support.constraint.ConstraintLayout>
