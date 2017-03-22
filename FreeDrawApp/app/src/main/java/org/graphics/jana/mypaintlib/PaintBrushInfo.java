@@ -27,11 +27,11 @@ class DefaultPaintBrushInfo {
         arrDefaultPaintBrush[0] = new PaintBrushInfo(false, 0.0f, 1.0f, 2.0f);// opaque
         arrDefaultPaintBrush[1] = new PaintBrushInfo(false, 0.0f, 0.0f, 2.0f);// opaque_multiply
         arrDefaultPaintBrush[2] = new PaintBrushInfo(true, 0.0f, 0.9f, 2.0f);// opaque_linearize
-        arrDefaultPaintBrush[3] = new PaintBrushInfo(false, -2.0f, 2.0f, 6.0f);// radius_logarithmic
+        arrDefaultPaintBrush[3] = new PaintBrushInfo(false, -2.0f, 2.5f/*2.0f*/, 6.0f);// radius_logarithmic
         arrDefaultPaintBrush[4] = new PaintBrushInfo(false, 0.0f, 0.8f, 1.0f);// hardness
         arrDefaultPaintBrush[5] = new PaintBrushInfo(false, 0.0f, 1.0f, 5.0f);// anti_aliasing
         arrDefaultPaintBrush[6] = new PaintBrushInfo(true, 0.0f, 0.0f, 6.0f);// dabs_per_basic_radius
-        arrDefaultPaintBrush[7] = new PaintBrushInfo(true, 0.0f, 2.0f, 6.0f);// dabs_per_actual_radius
+        arrDefaultPaintBrush[7] = new PaintBrushInfo(true, 0.0f, 2.5f/*2.0f*/, 6.0f);// dabs_per_actual_radius
         arrDefaultPaintBrush[8] = new PaintBrushInfo(true, 0.0f, 0.0f, 80.0f);// dabs_per_second
         arrDefaultPaintBrush[9] = new PaintBrushInfo(false, 0.0f, 0.0f, 1.5f);// radius_by_random
         arrDefaultPaintBrush[10] = new PaintBrushInfo(false, 0.0f, 0.04f, 0.2f);// speed1_slowness(Fine speed filter)
@@ -119,7 +119,7 @@ class LeavesPaintBrushInfo {
         arrLeavesPaintBrush[3] = new PaintBrushInfo(false, -2.0f, 2.5f/*1.89f*/, 6.0f);// radius_logarithmic
         arrLeavesPaintBrush[4] = new PaintBrushInfo(false, 0.0f, 0.8f, 1.0f);// hardness
         arrLeavesPaintBrush[5] = new PaintBrushInfo(false, 0.0f, 1.0f, 5.0f);// anti_aliasing
-        arrLeavesPaintBrush[6] = new PaintBrushInfo(true, 0.0f, 2.5f/*0.0f*/, 6.0f);// dabs_per_basic_radius
+        arrLeavesPaintBrush[6] = new PaintBrushInfo(true, 0.0f, 0.0f, 6.0f);// dabs_per_basic_radius
         arrLeavesPaintBrush[7] = new PaintBrushInfo(true, 0.0f, 2.5f/*2.0f*/, 6.0f);// dabs_per_actual_radius
         arrLeavesPaintBrush[8] = new PaintBrushInfo(true, 0.0f, 0.0f, 80.0f);	// dabs_per_second
         arrLeavesPaintBrush[9] = new PaintBrushInfo(false, 0.0f, 0.0f, 1.5f);// radius_by_random
