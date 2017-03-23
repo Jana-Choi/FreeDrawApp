@@ -33,7 +33,7 @@ public class PaintBoard extends View {
         m_Bitmap = Bitmap.createBitmap(w, h, Bitmap.Config.ARGB_8888);
         m_Canvas = new Canvas();
         m_Canvas.setBitmap(m_Bitmap);
-        m_Canvas.drawColor(Color.WHITE);
+        m_Canvas.drawColor(getResources().getColor(R.color.colorBaseBackground));
 
         //testDrawing();
     }
