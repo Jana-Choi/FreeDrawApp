@@ -9,14 +9,14 @@ import org.graphics.jana.mypaintlib.PaintBrushDefine.PaintBrushInput;
 
 
 public class PaintBrushSetter {
-    public static void DefaultPaintBrushSetting(PaintBrush sPaintBrush) {
-        DefaultPaintBrushInfo defaultPaintBrushInfo = new DefaultPaintBrushInfo();
+    public static void BasicPaintBrushSetting(PaintBrush sPaintBrush) {
+        BasicPaintBrushInfo defaultPaintBrushInfo = new BasicPaintBrushInfo();
         for(int s = 0; s < PaintBrushSetting.PAINT_BRUSH_SETTINGS_COUNT.ordinal(); s++)
         {
             for(int i = 0; i < PaintBrushInput.PAINT_BRUSH_INPUTS_COUNT.ordinal(); i++)
                 sPaintBrush.setMappingN(s, i, 0);
 
-            sPaintBrush.setBaseValue(s, defaultPaintBrushInfo.getDefaultSettingInfo(s).fDefault);
+            sPaintBrush.setBaseValue(s, defaultPaintBrushInfo.getBasicSettingInfo(s).fDefault);
         }
 
         sPaintBrush.setMappingN(PaintBrushSetting.PAINT_BRUSH_SETTING_OPAQUE_MULTIPLY.ordinal(), PaintBrushInput.PAINT_BRUSH_INPUT_PRESSURE.ordinal(), 2);

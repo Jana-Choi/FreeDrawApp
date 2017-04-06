@@ -29,6 +29,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
         android:text="FreeDraw"
+        android:textAppearance="@style/TextAppearance.AppCompat.Button"
         android:textColor="#CCCCCC"
         android:textStyle="bold"
         app:layout_constraintLeft_toLeftOf="parent"

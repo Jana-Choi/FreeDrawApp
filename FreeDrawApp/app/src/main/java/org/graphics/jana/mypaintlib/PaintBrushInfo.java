@@ -19,61 +19,61 @@ public class PaintBrushInfo {
 }
 
 
-class DefaultPaintBrushInfo {
-    private PaintBrushInfo[] arrDefaultPaintBrush;
+class BasicPaintBrushInfo {
+    private PaintBrushInfo[] arrBasicPaintBrush;
 
-    public DefaultPaintBrushInfo() {
-        arrDefaultPaintBrush = new PaintBrushInfo[45];
-        arrDefaultPaintBrush[0] = new PaintBrushInfo(false, 0.0f, 1.0f, 2.0f);// opaque
-        arrDefaultPaintBrush[1] = new PaintBrushInfo(false, 0.0f, 0.0f, 2.0f);// opaque_multiply
-        arrDefaultPaintBrush[2] = new PaintBrushInfo(true, 0.0f, 0.9f, 2.0f);// opaque_linearize
-        arrDefaultPaintBrush[3] = new PaintBrushInfo(false, -2.0f, 2.5f/*2.0f*/, 6.0f);// radius_logarithmic
-        arrDefaultPaintBrush[4] = new PaintBrushInfo(false, 0.0f, 0.8f, 1.0f);// hardness
-        arrDefaultPaintBrush[5] = new PaintBrushInfo(false, 0.0f, 1.0f, 5.0f);// anti_aliasing
-        arrDefaultPaintBrush[6] = new PaintBrushInfo(true, 0.0f, 0.0f, 6.0f);// dabs_per_basic_radius
-        arrDefaultPaintBrush[7] = new PaintBrushInfo(true, 0.0f, 2.5f/*2.0f*/, 6.0f);// dabs_per_actual_radius
-        arrDefaultPaintBrush[8] = new PaintBrushInfo(true, 0.0f, 0.0f, 80.0f);// dabs_per_second
-        arrDefaultPaintBrush[9] = new PaintBrushInfo(false, 0.0f, 0.0f, 1.5f);// radius_by_random
-        arrDefaultPaintBrush[10] = new PaintBrushInfo(false, 0.0f, 0.04f, 0.2f);// speed1_slowness(Fine speed filter)
-        arrDefaultPaintBrush[11] = new PaintBrushInfo(false, 0.0f, 0.8f, 3.0f);// speed2_slowness(Gross speed filter)
-        arrDefaultPaintBrush[12] = new PaintBrushInfo(true, -8.0f, 4.0f, 8.0f);// speed1_gamma(Fine speed gamma)
-        arrDefaultPaintBrush[13] = new PaintBrushInfo(true, -8.0f, 4.0f, 8.0f);// speed2_gamma(Gross speed gamma)
-        arrDefaultPaintBrush[14] = new PaintBrushInfo(false, 0.0f, 0.0f, 25.0f);// offset_by_random(Jitter)
-        arrDefaultPaintBrush[15] = new PaintBrushInfo(false, -3.0f, 0.0f, 3.0f);// offset_by_speed
-        arrDefaultPaintBrush[16] = new PaintBrushInfo(false, 0.0f, 1.0f, 15.0f);// offset_by_speed_slowness
-        arrDefaultPaintBrush[17] = new PaintBrushInfo(true, 0.0f, 0.0f, 10.0f);// slow_tracking
-        arrDefaultPaintBrush[18] = new PaintBrushInfo(false, 0.0f, 0.0f, 10.0f);	// slow_tracking_per_dab
-        arrDefaultPaintBrush[19] = new PaintBrushInfo(true, 0.0f, 0.0f, 12.0f);// tracking_noise
-        arrDefaultPaintBrush[20] = new PaintBrushInfo(true, 0.0f, 0.0f, 1.0f);// color_h(hue)
-        arrDefaultPaintBrush[21] = new PaintBrushInfo(true, -0.5f, 0.0f, 1.5f);// color_s(saturation)
-        arrDefaultPaintBrush[22] = new PaintBrushInfo(true, -0.5f, 0.0f, 1.5f);// color_v(value)
-        arrDefaultPaintBrush[23] = new PaintBrushInfo(true, 0.0f, 0.0f, 1.0f);// restore_color
-        arrDefaultPaintBrush[24] = new PaintBrushInfo(false, -2.0f, 0.0f, 2.0f);// change_color_h
-        arrDefaultPaintBrush[25] = new PaintBrushInfo(false, -2.0f, 0.0f, 2.0f);// change_color_l(lightness)(HSL)
-        arrDefaultPaintBrush[26] = new PaintBrushInfo(false, -2.0f, 0.0f, 2.0f);// change_color_hsl_s(HSL)
-        arrDefaultPaintBrush[27] = new PaintBrushInfo(false, -2.0f, 0.0f, 2.0f);// change_color_v(HSV)
-        arrDefaultPaintBrush[28] = new PaintBrushInfo(false, -2.0f, 0.0f, 2.0f);// change_color_hsv_s(HSV)
-        arrDefaultPaintBrush[29] = new PaintBrushInfo(false, 0.0f, 0.0f, 1.0f);// smudge
-        arrDefaultPaintBrush[30] = new PaintBrushInfo(false, 0.0f, 0.5f, 1.0f);// smudge_length
-        arrDefaultPaintBrush[31] = new PaintBrushInfo(false, -1.6f, 0.0f, 1.6f);// smudge_radius_log
-        arrDefaultPaintBrush[32] = new PaintBrushInfo(false, 0.0f, 0.0f, 1.0f);// eraser
-        arrDefaultPaintBrush[33] = new PaintBrushInfo(true, 0.0f, 0.0f, 0.5f);// stroke_threshold
-        arrDefaultPaintBrush[34] = new PaintBrushInfo(false, -1.0f, 4.0f, 7.0f);// stroke_duration_logarithmic
-        arrDefaultPaintBrush[35] = new PaintBrushInfo(false, 0.0f, 0.0f, 10.0f);// stroke_holdtime
-        arrDefaultPaintBrush[36] = new PaintBrushInfo(false, -5.0f, 0.0f, 5.0f);// custom_input
-        arrDefaultPaintBrush[37] = new PaintBrushInfo(false, 0.0f, 0.0f, 10.0f);// custom_input_slowness
-        arrDefaultPaintBrush[38] = new PaintBrushInfo(false, 1.0f, 1.0f, 10.0f);// elliptical_dab_ratio
-        arrDefaultPaintBrush[39] = new PaintBrushInfo(false, 0.0f, 90.0f, 180.0f);// elliptical_dab_angle
-        arrDefaultPaintBrush[40] = new PaintBrushInfo(false, 0.0f, 2.0f, 10.0f);// direction_filter
-        arrDefaultPaintBrush[41] = new PaintBrushInfo(false, 0.0f, 0.0f, 1.0f);// lock_alpha
-        arrDefaultPaintBrush[42] = new PaintBrushInfo(false, 0.0f, 0.0f, 1.0f);// colorize
-        arrDefaultPaintBrush[43] = new PaintBrushInfo(false, 0.0f, 0.0f, 1.0f);// snap_to_pixel
-        arrDefaultPaintBrush[44] = new PaintBrushInfo(true, -1.8f, 0.0f, 1.8f);// pressure_gain_log
+    public BasicPaintBrushInfo() {
+        arrBasicPaintBrush = new PaintBrushInfo[45];
+        arrBasicPaintBrush[0] = new PaintBrushInfo(false, 0.0f, 1.0f, 2.0f);// opaque
+        arrBasicPaintBrush[1] = new PaintBrushInfo(false, 0.0f, 0.0f, 2.0f);// opaque_multiply
+        arrBasicPaintBrush[2] = new PaintBrushInfo(true, 0.0f, 0.9f, 2.0f);// opaque_linearize
+        arrBasicPaintBrush[3] = new PaintBrushInfo(false, -2.0f, 2.5f/*2.0f*/, 6.0f);// radius_logarithmic
+        arrBasicPaintBrush[4] = new PaintBrushInfo(false, 0.0f, 0.8f, 1.0f);// hardness
+        arrBasicPaintBrush[5] = new PaintBrushInfo(false, 0.0f, 1.0f, 5.0f);// anti_aliasing
+        arrBasicPaintBrush[6] = new PaintBrushInfo(true, 0.0f, 0.0f, 6.0f);// dabs_per_basic_radius
+        arrBasicPaintBrush[7] = new PaintBrushInfo(true, 0.0f, 2.5f/*2.0f*/, 6.0f);// dabs_per_actual_radius
+        arrBasicPaintBrush[8] = new PaintBrushInfo(true, 0.0f, 0.0f, 80.0f);// dabs_per_second
+        arrBasicPaintBrush[9] = new PaintBrushInfo(false, 0.0f, 0.0f, 1.5f);// radius_by_random
+        arrBasicPaintBrush[10] = new PaintBrushInfo(false, 0.0f, 0.04f, 0.2f);// speed1_slowness(Fine speed filter)
+        arrBasicPaintBrush[11] = new PaintBrushInfo(false, 0.0f, 0.8f, 3.0f);// speed2_slowness(Gross speed filter)
+        arrBasicPaintBrush[12] = new PaintBrushInfo(true, -8.0f, 4.0f, 8.0f);// speed1_gamma(Fine speed gamma)
+        arrBasicPaintBrush[13] = new PaintBrushInfo(true, -8.0f, 4.0f, 8.0f);// speed2_gamma(Gross speed gamma)
+        arrBasicPaintBrush[14] = new PaintBrushInfo(false, 0.0f, 0.0f, 25.0f);// offset_by_random(Jitter)
+        arrBasicPaintBrush[15] = new PaintBrushInfo(false, -3.0f, 0.0f, 3.0f);// offset_by_speed
+        arrBasicPaintBrush[16] = new PaintBrushInfo(false, 0.0f, 1.0f, 15.0f);// offset_by_speed_slowness
+        arrBasicPaintBrush[17] = new PaintBrushInfo(true, 0.0f, 0.0f, 10.0f);// slow_tracking
+        arrBasicPaintBrush[18] = new PaintBrushInfo(false, 0.0f, 0.0f, 10.0f);	// slow_tracking_per_dab
+        arrBasicPaintBrush[19] = new PaintBrushInfo(true, 0.0f, 0.0f, 12.0f);// tracking_noise
+        arrBasicPaintBrush[20] = new PaintBrushInfo(true, 0.0f, 0.0f, 1.0f);// color_h(hue)
+        arrBasicPaintBrush[21] = new PaintBrushInfo(true, -0.5f, 0.0f, 1.5f);// color_s(saturation)
+        arrBasicPaintBrush[22] = new PaintBrushInfo(true, -0.5f, 0.0f, 1.5f);// color_v(value)
+        arrBasicPaintBrush[23] = new PaintBrushInfo(true, 0.0f, 0.0f, 1.0f);// restore_color
+        arrBasicPaintBrush[24] = new PaintBrushInfo(false, -2.0f, 0.0f, 2.0f);// change_color_h
+        arrBasicPaintBrush[25] = new PaintBrushInfo(false, -2.0f, 0.0f, 2.0f);// change_color_l(lightness)(HSL)
+        arrBasicPaintBrush[26] = new PaintBrushInfo(false, -2.0f, 0.0f, 2.0f);// change_color_hsl_s(HSL)
+        arrBasicPaintBrush[27] = new PaintBrushInfo(false, -2.0f, 0.0f, 2.0f);// change_color_v(HSV)
+        arrBasicPaintBrush[28] = new PaintBrushInfo(false, -2.0f, 0.0f, 2.0f);// change_color_hsv_s(HSV)
+        arrBasicPaintBrush[29] = new PaintBrushInfo(false, 0.0f, 0.0f, 1.0f);// smudge
+        arrBasicPaintBrush[30] = new PaintBrushInfo(false, 0.0f, 0.5f, 1.0f);// smudge_length
+        arrBasicPaintBrush[31] = new PaintBrushInfo(false, -1.6f, 0.0f, 1.6f);// smudge_radius_log
+        arrBasicPaintBrush[32] = new PaintBrushInfo(false, 0.0f, 0.0f, 1.0f);// eraser
+        arrBasicPaintBrush[33] = new PaintBrushInfo(true, 0.0f, 0.0f, 0.5f);// stroke_threshold
+        arrBasicPaintBrush[34] = new PaintBrushInfo(false, -1.0f, 4.0f, 7.0f);// stroke_duration_logarithmic
+        arrBasicPaintBrush[35] = new PaintBrushInfo(false, 0.0f, 0.0f, 10.0f);// stroke_holdtime
+        arrBasicPaintBrush[36] = new PaintBrushInfo(false, -5.0f, 0.0f, 5.0f);// custom_input
+        arrBasicPaintBrush[37] = new PaintBrushInfo(false, 0.0f, 0.0f, 10.0f);// custom_input_slowness
+        arrBasicPaintBrush[38] = new PaintBrushInfo(false, 1.0f, 1.0f, 10.0f);// elliptical_dab_ratio
+        arrBasicPaintBrush[39] = new PaintBrushInfo(false, 0.0f, 90.0f, 180.0f);// elliptical_dab_angle
+        arrBasicPaintBrush[40] = new PaintBrushInfo(false, 0.0f, 2.0f, 10.0f);// direction_filter
+        arrBasicPaintBrush[41] = new PaintBrushInfo(false, 0.0f, 0.0f, 1.0f);// lock_alpha
+        arrBasicPaintBrush[42] = new PaintBrushInfo(false, 0.0f, 0.0f, 1.0f);// colorize
+        arrBasicPaintBrush[43] = new PaintBrushInfo(false, 0.0f, 0.0f, 1.0f);// snap_to_pixel
+        arrBasicPaintBrush[44] = new PaintBrushInfo(true, -1.8f, 0.0f, 1.8f);// pressure_gain_log
     }
 
-    public PaintBrushInfo getDefaultSettingInfo(int id) {
+    public PaintBrushInfo getBasicSettingInfo(int id) {
         PBUtil.CHECK_SETTING_ID(id);
-        return arrDefaultPaintBrush[id];
+        return arrBasicPaintBrush[id];
     }
 }
 

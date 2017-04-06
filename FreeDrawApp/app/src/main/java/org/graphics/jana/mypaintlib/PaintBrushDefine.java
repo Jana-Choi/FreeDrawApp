@@ -13,8 +13,8 @@ public class PaintBrushDefine {
     public static final int PAINT_BRUSH_B = 128;
 
     public enum PaintBrushType {
-        PAINT_BRUSH_NONE(0),
-        PAINT_BRUSH_DEFAULT(1),
+        PAINT_BRUSH_PEN(0),
+        PAINT_BRUSH_BASIC(1),
         PAINT_BRUSH_CHARCOAL(2),
         PAINT_BRUSH_SHORT_GRASS(3),
         PAINT_BRUSH_WATERCOLOR_EXPRESSIVE(4),

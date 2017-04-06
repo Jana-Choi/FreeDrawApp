@@ -21,6 +21,8 @@ public class PaintBoard extends View {
     private Canvas m_Canvas;
     private PaintBrush m_Brush;
 
+    private int m_nPenType = 0;
+
 
     public PaintBoard(Context context) {
         super(context);
@@ -34,17 +36,11 @@ public class PaintBoard extends View {
         m_Canvas = new Canvas();
         m_Canvas.setBitmap(m_Bitmap);
         m_Canvas.drawColor(getResources().getColor(R.color.colorBaseBackground));
-
-        //testDrawing();
     }
 
-    private void testDrawing() {
-        int x1 = 100, y1 = 100, x2 = 300, y2 = 100;
-        m_Brush = new PaintBrush(m_Bitmap);
-        //PaintBrushSetter.LeavesPaintBrushSetting(m_Brush);
-        PaintBrushSetter.DefaultPaintBrushSetting(m_Brush);
-        m_Brush.strokeTo(x1, y1, PaintBrushDefine.PAINT_BRUSH_PRESSURE, PaintBrushDefine.PAINT_BRUSH_XTILT, PaintBrushDefine.PAINT_BRUSH_YTILT, PaintBrushDefine.PAINT_BRUSH_DTIME);
-        m_Brush.strokeTo(x2, y2, PaintBrushDefine.PAINT_BRUSH_PRESSURE, PaintBrushDefine.PAINT_BRUSH_XTILT, PaintBrushDefine.PAINT_BRUSH_YTILT, PaintBrushDefine.PAINT_BRUSH_DTIME);
+    public void clear() {
+        m_Canvas.drawColor(getResources().getColor(R.color.colorBaseBackground));
+        invalidate();
     }
 
     @Override
@@ -59,16 +55,10 @@ public class PaintBoard extends View {
     public boolean onTouchEvent(MotionEvent event) {
         //return super.onTouchEvent(event);
         int action = event.getAction();
-        switch(action) {
+        switch (action) {
             case MotionEvent.ACTION_DOWN: {
                 m_Brush = new PaintBrush(m_Bitmap);
-                PaintBrushSetter.DefaultPaintBrushSetting(m_Brush);
-                //PaintBrushSetter.CharcoalPaintBrushSetting(m_Brush);
-                //PaintBrushSetter.ShortGrassPaintBrushSetting(m_Brush);
-                //PaintBrushSetter.WatercolorExpressivePaintBrushSetting(m_Brush);
-                //PaintBrushSetter.LeavesPaintBrushSetting(m_Brush);
-                //PaintBrushSetter.CalligraphyPaintBrushSetting(m_Brush);
-                //PaintBrushSetter.GlowPaintBrushSetting(m_Brush);
+                initPaintBrush(m_Brush);
 
                 m_Brush.strokeTo(event.getX(), event.getY(), PaintBrushDefine.PAINT_BRUSH_PRESSURE, PaintBrushDefine.PAINT_BRUSH_XTILT, PaintBrushDefine.PAINT_BRUSH_YTILT, PaintBrushDefine.PAINT_BRUSH_DTIME);
             }
@@ -87,5 +77,23 @@ public class PaintBoard extends View {
 
         invalidate();
         return true;
+    }
+
+    private void initPaintBrush(PaintBrush sPaintBrush) {
+        switch (m_nPenType) {
+            case 0:
+            case 1: PaintBrushSetter.BasicPaintBrushSetting(m_Brush); break;
+            case 2: PaintBrushSetter.CharcoalPaintBrushSetting(m_Brush); break;
+            case 3: PaintBrushSetter.ShortGrassPaintBrushSetting(m_Brush); break;
+            case 4: PaintBrushSetter.WatercolorExpressivePaintBrushSetting(m_Brush); break;
+            case 5: PaintBrushSetter.LeavesPaintBrushSetting(m_Brush); break;
+            case 6: PaintBrushSetter.CalligraphyPaintBrushSetting(m_Brush); break;
+            case 7: PaintBrushSetter.GlowPaintBrushSetting(m_Brush); break;
+            default: assert (m_nPenType >= 0 && m_nPenType <= 7); break;
+        }
+    }
+
+    public void setPenType(int pen) {
+        m_nPenType = pen;
     }
 }

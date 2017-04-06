@@ -17,6 +17,19 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity"></activity>
+
+        <activity
+            android:name=".ColorPaletteDialog"
+            android:theme="@android:style/Theme.Dialog"
+            >
+        </activity>
+
+        <activity
+            android:name=".PenPaletteDialog"
+            android:theme="@android:style/Theme.Dialog"
+            >
+        </activity>
+
     </application>
 
 </manifest>
