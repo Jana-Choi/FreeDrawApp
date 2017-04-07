@@ -62,15 +62,6 @@
                     tools:ignore="HardcodedText" />
 
                 <ImageButton
-                    android:id="@+id/button_fill"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/button_bg"
-                    android:contentDescription="fill"
-                    android:src="@drawable/button_fill_32"
-                    tools:ignore="HardcodedText" />
-
-                <ImageButton
                     android:id="@+id/button_pen"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -89,12 +80,21 @@
                     tools:ignore="HardcodedText" />
 
                 <ImageButton
-                    android:id="@+id/button_width"
+                    android:id="@+id/button_size"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/button_bg"
                     android:contentDescription="width"
-                    android:src="@drawable/button_width_32"
+                    android:src="@drawable/button_size_32"
+                    tools:ignore="HardcodedText" />
+
+                <ImageButton
+                    android:id="@+id/button_eraser"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/button_bg"
+                    android:contentDescription="fill"
+                    android:src="@drawable/button_eraser_32"
                     tools:ignore="HardcodedText" />
 
                 <ImageButton

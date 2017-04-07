@@ -33,7 +33,7 @@ public class ColorPaletteDialog extends Activity {
         closeBtn = (Button) findViewById(R.id.closeBtn);
 
         grid.setColumnWidth(14);
-        grid.setBackgroundColor(Color.GRAY);
+        grid.setBackgroundColor(Color.DKGRAY);
         grid.setVerticalSpacing(4);
         grid.setHorizontalSpacing(4);
 

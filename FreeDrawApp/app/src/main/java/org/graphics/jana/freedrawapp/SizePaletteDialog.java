@@ -17,22 +17,22 @@ import android.widget.Button;
 import android.widget.GridView;
 
 /**
- * Created by ejchoi on 2017-04-06.
+ * Created by ejchoi on 2017-04-07.
  */
 
-public class PenPaletteDialog extends Activity {
+public class SizePaletteDialog extends Activity {
     GridView grid;
     Button closeBtn;
-    PenDataAdapter adapter;
+    SizeDataAdapter adapter;
 
-    public static OnPenSelectedListener listener;
+    public static OnSizeSelectedListener listener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.dialog);
 
-        this.setTitle("Pen");
+        this.setTitle("Size");
 
         grid = (GridView) findViewById(R.id.colorGrid);
         closeBtn = (Button) findViewById(R.id.closeBtn);
@@ -42,7 +42,7 @@ public class PenPaletteDialog extends Activity {
         grid.setVerticalSpacing(4);
         grid.setHorizontalSpacing(4);
 
-        adapter = new PenDataAdapter(this);
+        adapter = new SizeDataAdapter(this);
         grid.setAdapter(adapter);
         grid.setNumColumns(adapter.getNumColumns());
 
@@ -56,7 +56,7 @@ public class PenPaletteDialog extends Activity {
 }
 
 
-class PenDataAdapter extends BaseAdapter {
+class SizeDataAdapter extends BaseAdapter {
     /**
      * Application Context
      */
@@ -66,8 +66,8 @@ class PenDataAdapter extends BaseAdapter {
      * Pens defined
      */
     public static final int [] pens = new int[] {
-            0, 1, 2, 3,
-            4, 5, 6, 7
+            2, 4, 6, 8, 10,
+            12, 14, 16, 18, 20
     };
 
     int rowCount;
@@ -75,13 +75,13 @@ class PenDataAdapter extends BaseAdapter {
 
 
 
-    public PenDataAdapter(Context context) {
+    public SizeDataAdapter(Context context) {
         super();
 
         mContext = context;
 
         rowCount = 2;
-        columnCount = 4;
+        columnCount = 5;
     }
 
     public int getNumColumns() {
@@ -101,50 +101,50 @@ class PenDataAdapter extends BaseAdapter {
     }
 
     public View getView(int position, View view, ViewGroup group) {
-        Log.d("PenDataAdapter", "getView(" + position + ") called.");
+        Log.d("SizeDataAdapter", "getView(" + position + ") called.");
 
         // calculate position
         int rowIndex = position / rowCount;
         int columnIndex = position % rowCount;
-        Log.d("PenDataAdapter", "Index : " + rowIndex + ", " + columnIndex);
+        Log.d("SizeDataAdapter", "Index : " + rowIndex + ", " + columnIndex);
 
         GridView.LayoutParams params = new GridView.LayoutParams(
                 GridView.LayoutParams.MATCH_PARENT,
                 GridView.LayoutParams.MATCH_PARENT);
 
-        BitmapFactory.Options options = new BitmapFactory.Options();
-        options.inSampleSize = 2;
-        Bitmap penBitmap = BitmapFactory.decodeResource(mContext.getResources(), R.drawable.pen_pen, options);
-        switch (position) {
-            case 1: penBitmap = BitmapFactory.decodeResource(mContext.getResources(), R.drawable.pen_basic, options); break;
-            case 2: penBitmap = BitmapFactory.decodeResource(mContext.getResources(), R.drawable.pen_charcoal, options); break;
-            case 3: penBitmap = BitmapFactory.decodeResource(mContext.getResources(), R.drawable.pen_short_grass, options); break;
-            case 4: penBitmap = BitmapFactory.decodeResource(mContext.getResources(), R.drawable.pen_watercolor_expressive, options); break;
-            case 5: penBitmap = BitmapFactory.decodeResource(mContext.getResources(), R.drawable.pen_leaves, options); break;
-            case 6: penBitmap = BitmapFactory.decodeResource(mContext.getResources(), R.drawable.pen_calligraphy, options); break;
-            case 7: penBitmap = BitmapFactory.decodeResource(mContext.getResources(), R.drawable.pen_glow, options); break;
-            default: assert (position >= 0 && position <= 7); break;
-        }
+        int areaWidth = 60;
+        int areaHeight = 80;
 
-        BitmapDrawable penDrawable = new BitmapDrawable(mContext.getResources(), penBitmap);
+        Bitmap sizeBitmap = Bitmap.createBitmap(areaWidth, areaHeight, Bitmap.Config.ARGB_8888);
+        Canvas penCanvas = new Canvas();
+        penCanvas.setBitmap(sizeBitmap);
+
+        Paint mPaint = new Paint();
+        mPaint.setColor(Color.WHITE);
+        penCanvas.drawRect(0, 0, areaWidth, areaHeight, mPaint);
+
+        mPaint.setColor(Color.BLACK);
+        mPaint.setStrokeWidth((float)pens[position]);
+        penCanvas.drawLine(0, areaHeight/2, areaWidth-1, areaHeight/2, mPaint);
+        BitmapDrawable sizeDrawable = new BitmapDrawable(mContext.getResources(), sizeBitmap);
 
         // create a Button with the color
         Button aItem = new Button(mContext);
         aItem.setText(" ");
         aItem.setLayoutParams(params);
         aItem.setPadding(4, 4, 4, 4);
-        aItem.setBackgroundDrawable(penDrawable);
+        aItem.setBackgroundDrawable(sizeDrawable);
         aItem.setHeight(120);
         aItem.setTag(pens[position]);
 
         // set listener
         aItem.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                if (PenPaletteDialog.listener != null) {
-                    PenPaletteDialog.listener.onPenSelected(((Integer)v.getTag()).intValue());
+                if (SizePaletteDialog.listener != null) {
+                    SizePaletteDialog.listener.onSizeSelected(((Integer)v.getTag()).intValue());
                 }
 
-                ((PenPaletteDialog)mContext).finish();
+                ((SizePaletteDialog)mContext).finish();
             }
         });
 
